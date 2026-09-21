@@ -12,6 +12,7 @@ module.exports = async (req, res) => {
     return;
   }
 
+  // ── Buscar producto en Firebase ─────────────────────────────────
   const FIREBASE_URL = "https://dsdistribuidorasfc4-default-rtdb.firebaseio.com/products.json";
 
   let ogTitle = STORE_NAME;
@@ -36,6 +37,7 @@ module.exports = async (req, res) => {
           }
           return false;
         });
+
         if (producto) {
           ogTitle = producto.name || STORE_NAME;
           ogPrice = producto.price || "";
